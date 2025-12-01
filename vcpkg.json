@@ -1,0 +1,40 @@
+{
+  "builtin-baseline": "b1b19307e2d2ec1eefbdb7ea069de7d4bcd31f01",
+  "dependencies": [
+    "boost-algorithm",
+    "boost-graph",
+    "boost-heap",
+    "boost-program-options",
+    "boost-property-map",
+    "boost-property-tree",
+    {
+      "name": "ceres",
+      "features": [
+        "cuda",
+        "lapack",
+        "schur",
+        "suitesparse"
+      ]
+    },
+    "eigen3",
+    "freeimage",
+    {
+      "name": "jasper",
+      "default-features": false
+    },
+    "metis",
+    "sqlite3",
+    "glew",
+    "cgal",
+    "faiss",
+    "flann",
+    {
+      "name": "vcpkg-cmake",
+      "host": true
+    },
+    {
+      "name": "vcpkg-cmake-config",
+      "host": true
+    }
+  ]
+}
