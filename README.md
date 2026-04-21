@@ -1,5 +1,9 @@
-# On-the-fly Feedback SfM: Online Explore-and-Exploit UAV Photogrammetry with Incremental Mesh Quality-Aware Indicator and Predictive Path Planning
-Liyuan Lou$^{\dag}$, Wanyun Li$^{\dag}$, Wentian Gan$^{\dag}$, Yifei Yu, Tengfei Wang, Xin Wang,~\IEEEmembership{Member,~IEEE}, Zongqian Zhan,~\IEEEmembership{Member,~IEEE
+<h2 align="center">On-the-fly Feedback SfM: Online Explore-and-Exploit UAV Photogrammetry with Incremental Mesh Quality-Aware Indicator and Predictive Path Planning</h2>
+
+<p align="center">
+  Liyuan Lou<sup>†</sup>, Wanyun Li<sup>†</sup>, Wentian Gan<sup>†</sup>, Yifei Yu, Tengfei Wang, Xin Wang, <i>Member, IEEE</i>, Zongqian Zhan, <i>Member, IEEE</i>
+</p>
+
 **On-the-fly Feedback SfM:** An Explore-and-Exploit Framework for Real-Time UAV Photogrammetry.
 
 ### Key Features
