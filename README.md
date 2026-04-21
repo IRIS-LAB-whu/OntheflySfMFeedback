@@ -4,14 +4,86 @@
   Liyuan Lou<sup>†</sup>, Wanyun Li<sup>†</sup>, Wentian Gan<sup>†</sup>, Yifei Yu, Tengfei Wang, Xin Wang, <i>Member, IEEE</i>, Zongqian Zhan, <i>Member, IEEE</i>
 </p>
 
-**On-the-fly Feedback SfM:** An Explore-and-Exploit Framework for Real-Time UAV Photogrammetry.
+**On-the-fly Feedback SfM** is a real-time UAV photogrammetry framework that integrates **incremental Structure-from-Motion (SfM)**, **online coarse mesh generation**, **real-time mesh quality assessment**, and **predictive path planning** into a closed feedback loop for adaptive aerial data acquisition.
 
-### Key Features
+Unlike conventional offline photogrammetry pipelines that reconstruct scenes only after the flight is finished, this framework continuously evaluates the evolving reconstruction quality during image acquisition and actively guides the UAV toward under-observed or low-quality regions. This enables an **explore-and-exploit** workflow for efficient, reconstruction-aware, and navigation-guided UAV photogrammetry.
 
-* **Online coarse mesh generation** from incrementally expanding sparse point clouds.
-* **Real-time mesh quality assessment** with key quality metrics (GSD, observation redundancy, and reprojection error).
-* **Predictive path planning & trajectory refinement** for optimized navigation guidance.
+---
 
+## Highlights
+
+- **Incremental SfM with online feedback**  
+  Continuously estimates camera poses and expands sparse 3D structure as new UAV images arrive.
+
+- **Online coarse mesh generation**  
+  Builds coarse mesh representations directly from incrementally reconstructed sparse point clouds.
+
+- **Real-time mesh quality assessment**  
+  Evaluates reconstruction quality using multiple indicators, including:
+  - Ground Sampling Distance (**GSD**)
+  - Observation Redundancy
+  - Reprojection Error
+
+- **Predictive path planning and trajectory refinement**  
+  Detects low-quality mesh regions and generates informative next-best viewpoints for adaptive image acquisition.
+
+- **Closed-loop UAV photogrammetry**  
+  Couples scene reconstruction, quality evaluation, and navigation guidance into a unified online framework.
+
+---
+## Framework Overview
+
+The system follows an **explore-and-exploit** strategy:
+
+1. **Explore**  
+   Acquire UAV images incrementally and perform online SfM to estimate camera poses and sparse 3D structure.
+
+2. **Evaluate**  
+   Generate a coarse mesh from the evolving sparse point cloud and assess its reconstruction quality in real time.
+
+3. **Exploit**  
+   Identify low-quality or under-observed regions and generate candidate viewpoints to improve reconstruction completeness and reliability.
+
+4. **Refine**  
+   Optimize the UAV trajectory to balance acquisition efficiency, path smoothness, and reconstruction-oriented coverage.
+
+This design allows the UAV to adapt its flight path according to the current reconstruction status rather than relying solely on a predefined flight route.
+
+---
+
+## Method Pipeline
+
+The overall pipeline consists of the following key modules:
+
+- **Incremental image acquisition**
+- **Online camera pose estimation**
+- **Sparse point cloud expansion**
+- **Coarse mesh generation**
+- **Mesh quality evaluation**
+- **Low-quality region detection**
+- **Candidate viewpoint generation**
+- **Trajectory optimization and refinement**
+
+A simplified logic flow is:
+
+```text
+Incoming UAV Images
+        ↓
+ Incremental SfM
+        ↓
+ Sparse Point Cloud
+        ↓
+ Online Coarse Mesh
+        ↓
+ Mesh Quality Assessment
+        ↓
+ Low-Quality Region Detection
+        ↓
+ Candidate Viewpoint Planning
+        ↓
+ Trajectory Refinement
+        ↓
+ Adaptive UAV Navigation
 
 ---
 
@@ -61,4 +133,5 @@ Please strictly follow the order below to ensure correct dependency linking:
 * Feature
 * Workflow
 * UI
+
 
