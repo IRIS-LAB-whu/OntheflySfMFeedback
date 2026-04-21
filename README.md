@@ -3,7 +3,6 @@
 <p align="center">
   Liyuan Lou<sup>†</sup>, Wanyun Li<sup>†</sup>, Wentian Gan<sup>†</sup>, Yifei Yu, Tengfei Wang, Xin Wang, <i>Member, IEEE</i>, Zongqian Zhan, <i>Member, IEEE</i>
 </p>
----
 
 [![arXiv](https://img.shields.io/badge/arXiv-2512.02375-b31b1b.svg)](https://arxiv.org/abs/2512.02375)
 
