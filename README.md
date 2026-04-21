@@ -1,4 +1,4 @@
-<h2 align="center">On-the-fly Feedback SfM: Online Explore-and-Exploit UAV Photogrammetry with Incremental Mesh Quality-Aware Indicator and Predictive Path Planning</h2>
+<img width="7816" height="4670" alt="workflow" src="https://github.com/user-attachments/assets/6e5475b6-de05-4708-ac07-7c19cba7c291" /><h2 align="center">On-the-fly Feedback SfM: Online Explore-and-Exploit UAV Photogrammetry with Incremental Mesh Quality-Aware Indicator and Predictive Path Planning</h2>
 
 <p align="center">
   Liyuan Lou<sup>†</sup>, Wanyun Li<sup>†</sup>, Wentian Gan<sup>†</sup>, Yifei Yu, Tengfei Wang, Xin Wang, <i>Member, IEEE</i>, Zongqian Zhan, <i>Member, IEEE</i>
@@ -9,6 +9,7 @@
 **On-the-fly Feedback SfM** is a real-time UAV photogrammetry framework that integrates **incremental Structure-from-Motion (SfM)**, **online coarse mesh generation**, **real-time mesh quality assessment**, and **predictive path planning** into a closed feedback loop for adaptive aerial data acquisition.
 
 Unlike conventional offline photogrammetry pipelines that reconstruct scenes only after the flight is finished, this framework continuously evaluates the evolving reconstruction quality during image acquisition and actively guides the UAV toward under-observed or low-quality regions. This enables an **explore-and-exploit** workflow for efficient, reconstruction-aware, and navigation-guided UAV photogrammetry.
+<img width="7816" height="4670" alt="workflow" src="https://github.com/user-attachments/assets/f441ee69-4dac-4fb4-810f-627d121a74d5" />
 
 ---
 
