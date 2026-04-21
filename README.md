@@ -1,18 +1,20 @@
-<h1 align="center">On-the-fly Feedback SfM: Online Explore-and-Exploit UAV Photogrammetry with Incremental Mesh Quality-Aware Indicator and Predictive Path Planning</h1>
+ <h1 align="center">On-the-fly Feedback SfM: Online Explore-and-Exploit UAV Photogrammetry with Incremental Mesh Quality-Aware Indicator and Predictive   
+  Path Planning</h1>                                                                                                                                       
+                                                                                                                                                           
+  <p align="center">                                                                                                                                       
+    Liyuan Lou<sup>†</sup>, Wanyun Li<sup>†</sup>, Wentian Gan<sup>†</sup>, Yifei Yu, Tengfei Wang, Xin Wang, <i>Member, IEEE</i>, Zongqian Zhan,         
+  <i>Member, IEEE</i>
+  </p>
 
-<p align="center">                                                            
-    <a href="https://github.com/IRIS-LAB-whu">                                  
-      <img                                                                      
-  src="https://img.shields.io/badge/Lab-IRIS--LAB--whu-blue?logo=github"        
-  alt="IRIS Lab"/>                                                              
-    </a>                                                                        
-  </p> 
-  
-<p align="center">
-  Liyuan Lou<sup>†</sup>, Wanyun Li<sup>†</sup>, Wentian Gan<sup>†</sup>, Yifei Yu, Tengfei Wang, Xin Wang, <i>Member, IEEE</i>, Zongqian Zhan, <i>Member, IEEE</i>
-</p>
-
-[![arXiv](https://img.shields.io/badge/arXiv-2512.02375-b31b1b.svg)](https://arxiv.org/abs/2512.02375)
+  <p align="center">
+    <a href="https://github.com/IRIS-LAB-whu">
+      <img src="https://img.shields.io/badge/Lab-IRIS--LAB--whu-blue?logo=github" alt="IRIS Lab"/>
+    </a>
+    &nbsp;                                                                                                                                                 
+    <a href="https://arxiv.org/abs/2512.02375">                                                                                                            
+      <img src="https://img.shields.io/badge/arXiv-2512.02375-b31b1b.svg" alt="arXiv"/>                                                                    
+    </a>                                                                                                                                                   
+  </p>     
 
 **On-the-fly Feedback SfM** is a real-time UAV photogrammetry framework that integrates **incremental Structure-from-Motion (SfM)**, **online coarse mesh generation**, **real-time mesh quality assessment**, and **predictive path planning** into a closed feedback loop for adaptive aerial data acquisition.
 
