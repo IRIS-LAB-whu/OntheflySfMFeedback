@@ -19,7 +19,7 @@
     <img src="https://img.shields.io/badge/arXiv-2512.02375-b31b1b.svg" alt="arXiv"/>
   </a>
   &nbsp;
-  <a href="https://yifeiu225.github.io/on-the-flySfMv2.github.io/">
+  <a href="https://louliyuan.github.io/OntheflyFeedbackSfM_homepage/">
     <img src="https://img.shields.io/badge/Project-Page-brightgreen" alt="Project Page"/>
   </a>
 </p>
