@@ -3,6 +3,9 @@
 <p align="center">
   Liyuan Lou<sup>†</sup>, Wanyun Li<sup>†</sup>, Wentian Gan<sup>†</sup>, Yifei Yu, Tengfei Wang, Xin Wang, <i>Member, IEEE</i>, Zongqian Zhan, <i>Member, IEEE</i>
 </p>
+---
+
+[![arXiv](https://img.shields.io/badge/arXiv-2512.02375-b31b1b.svg)](https://arxiv.org/abs/2512.02375)
 
 **On-the-fly Feedback SfM** is a real-time UAV photogrammetry framework that integrates **incremental Structure-from-Motion (SfM)**, **online coarse mesh generation**, **real-time mesh quality assessment**, and **predictive path planning** into a closed feedback loop for adaptive aerial data acquisition.
 
@@ -49,41 +52,6 @@ The system follows an **explore-and-exploit** strategy:
 
 This design allows the UAV to adapt its flight path according to the current reconstruction status rather than relying solely on a predefined flight route.
 
----
-
-## Method Pipeline
-
-The overall pipeline consists of the following key modules:
-
-- **Incremental image acquisition**
-- **Online camera pose estimation**
-- **Sparse point cloud expansion**
-- **Coarse mesh generation**
-- **Mesh quality evaluation**
-- **Low-quality region detection**
-- **Candidate viewpoint generation**
-- **Trajectory optimization and refinement**
-
-A simplified logic flow is:
-
-```text
-Incoming UAV Images
-        ↓
- Incremental SfM
-        ↓
- Sparse Point Cloud
-        ↓
- Online Coarse Mesh
-        ↓
- Mesh Quality Assessment
-        ↓
- Low-Quality Region Detection
-        ↓
- Candidate Viewpoint Planning
-        ↓
- Trajectory Refinement
-        ↓
- Adaptive UAV Navigation
 
 ---
 
@@ -133,5 +101,21 @@ Please strictly follow the order below to ensure correct dependency linking:
 * Feature
 * Workflow
 * UI
+
+## Citation
+
+If you find this work useful in your research, please consider citing:
+
+```bibtex
+@misc{lou2025ontheflyfeedbacksfm,
+  title={On-the-fly Feedback SfM: Online Explore-and-Exploit UAV Photogrammetry with Incremental Mesh Quality-Aware Indicator and Predictive Path Planning},
+  author={Liyuan Lou and Wanyun Li and Wentian Gan and Yifei Yu and Tengfei Wang and Xin Wang and Zongqian Zhan},
+  year={2025},
+  eprint={2512.02375},
+  archivePrefix={arXiv},
+  primaryClass={cs.CV},
+  doi={10.48550/arXiv.2512.02375},
+  url={https://arxiv.org/abs/2512.02375}
+}
 
 
