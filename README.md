@@ -1,5 +1,13 @@
-<h2 align="center">On-the-fly Feedback SfM: Online Explore-and-Exploit UAV Photogrammetry with Incremental Mesh Quality-Aware Indicator and Predictive Path Planning</h2>
+<h1 align="center">On-the-fly Feedback SfM: Online Explore-and-Exploit UAV Photogrammetry with Incremental Mesh Quality-Aware Indicator and Predictive Path Planning</h1>
 
+<p align="center">                                                            
+    <a href="https://github.com/IRIS-LAB-whu">                                  
+      <img                                                                      
+  src="https://img.shields.io/badge/Lab-IRIS--LAB--whu-blue?logo=github"        
+  alt="IRIS Lab"/>                                                              
+    </a>                                                                        
+  </p> 
+  
 <p align="center">
   Liyuan Lou<sup>†</sup>, Wanyun Li<sup>†</sup>, Wentian Gan<sup>†</sup>, Yifei Yu, Tengfei Wang, Xin Wang, <i>Member, IEEE</i>, Zongqian Zhan, <i>Member, IEEE</i>
 </p>
