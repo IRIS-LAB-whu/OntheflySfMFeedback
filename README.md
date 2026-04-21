@@ -97,7 +97,7 @@ We evaluate our method on the following UAV datasets:
 
 > **Recommended hardware:** Intel i9-12900K CPU, NVIDIA RTX3080 (or equivalent GPU with ≥10GB VRAM), CUDA 12.2
 
-This project is built upon **[SfM on-the-fly]([https://arxiv.org/abs/2409.06394](https://www.sciencedirect.com/science/article/abs/pii/S0924271625001388))** (Zhan et al., ISPRS Journal of Photogrammetry and Remote Sensing, 2025). Please ensure you are familiar with its setup before proceeding.
+This project is built upon **[SfM on-the-fly]((https://www.sciencedirect.com/science/article/abs/pii/S0924271625001388))** (Zhan et al., ISPRS Journal of Photogrammetry and Remote Sensing, 2025). Please ensure you are familiar with its setup before proceeding.
 
 ## Environment Setup
 
