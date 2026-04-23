@@ -162,3 +162,12 @@ If you find this work useful in your research, please consider citing:
   url={https://arxiv.org/abs/2512.02375}
 }
 ```
+
+---
+
+## Acknowledgments                                                                                                                                         
+                                                                        
+This work was supported by the National Natural Science Foundation of China (No. 42301507) and the Luojia Undergraduate Innovation Research Fund of Wuhan  
+University.                                                             
+                                                                                                                                                           
+**Corresponding authors:** Xin Wang (xwang@sgg.whu.edu.cn) and Zongqian Zhan (zqzhan@sgg.whu.edu.cn)
