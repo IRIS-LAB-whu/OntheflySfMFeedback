@@ -81,8 +81,8 @@ We evaluate our method on the following UAV datasets:
 | Dataset | Images | Platform | Resolution | Source |
 |---------|--------|----------|------------|--------|
 | SHHY | 770 | DJI Mavic 2 Pro | 1920×1080 | Self-captured |
-| PHANTOM | 467 | DJI Mavic 2 Pro | 1920×1080 | Bu et al., 2016 |
-| US3D | 990 | — | 5472×3648 | Lin et al., 2022 (UrbanScene3D) |
+| PHANTOM | 467 | DJI Mavic 2 Pro | 1920×1080 | [Bu et al., 2016](https://ieeexplore.ieee.org/abstract/document/7759672) |
+| US3D | 990 | — | 5472×3648 | [Lin et al., 2022](https://link.springer.com/chapter/10.1007/978-3-031-20074-8_6) |
 | GYM | 580 | DJI Matrice 4T | 4032×3024 | Self-captured |
 | YS | 320 | DJI Matrice 4T | 4032×3024 | Self-captured |
 | XingHu | — | DJI Matrice 4T | 4032×3024 | Self-captured |
