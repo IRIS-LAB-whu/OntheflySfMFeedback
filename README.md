@@ -102,7 +102,7 @@ Quantitative comparison of surface reconstruction quality. **Bold** indicates th
 The ensemble mesh-quality indicator `Q_total` reflects both geometric and observational completeness. On PHANTOM, regions with stronger observation redundancy consistently appear as higher-quality areas, while sparse or weakly observed regions are assigned lower scores. On US3D, the indicator captures local quality evolution in complex rooftop structures as additional images are integrated.
 
 <p align="center">
-  <img src="assets/online_quality_feedback.jpg" alt="Online quality assessment during incremental image acquisition " width="100%"/>
+  <img src="assets/online_quality_feedback.png" alt="Online quality assessment during incremental image acquisition " width="100%"/>
 </p>
 
 <p align="center"><em>Online quality assessment during incremental image acquisition.</em></p>
