@@ -7,7 +7,7 @@
 <p align="center">
   <i>School of Geodesy and Geomatics, Wuhan University, Wuhan 430079, China</i><br/>
   <sup>†</sup> Equal contribution &nbsp;|&nbsp;
-  Corresponding authors: <a href="mailto:xwang@sgg.whu.edu.cn">Xin Wang</a>, <a href="mailto:zqzhan@sgg.whu.edu.cn">Zongqian Zhan</a>
+  Corresponding author: <a href="mailto:xwang@sgg.whu.edu.cn">Xin Wang</a>
 </p>
 
 <p align="center">
@@ -101,16 +101,6 @@ Quantitative comparison of surface reconstruction quality. **Bold** indicates th
 
 The ensemble mesh-quality indicator `Q_total` reflects both geometric and observational completeness. On PHANTOM, regions with stronger observation redundancy consistently appear as higher-quality areas, while sparse or weakly observed regions are assigned lower scores. On US3D, the indicator captures local quality evolution in complex rooftop structures as additional images are integrated.
 
-### Adaptive Path Planning
-
-On the US3D benchmark, the proposed strategy reallocates viewpoints toward detected low-quality regions while keeping planning responsive enough for online operation.
-
-| Method | Viewpoints | Trajectory Length | Generation Time |
-|--------|------------|-------------------|-----------------|
-| Smith et al. | 230 | 387.86 | Offline |
-| Circle | 66 | 1867.03 | Manually designed |
-| Nadir | 64 | 1783.99 | Manually designed |
-| Ours | 120 | 947.43 | 744.342 ms |
 
 ### Online Feedback Pipeline
 
