@@ -87,6 +87,12 @@ We evaluate our method on the following UAV datasets:
 | YS | 320 | DJI Matrice 4T | 4032×3024 | Self-captured |
 | XingHu | — | DJI Matrice 4T | 4032×3024 | Self-captured |
 
+<p align="center">
+  <img src="assets/sample_images.png" alt="Sample images of the evaluated UAV datasets" width="100%"/>
+</p>
+
+<p align="center"><em>Sample images of the evaluated UAV datasets.</em></p>
+
 ## Experimental Results                                                                                                                                    
                                                                                                                                                            
 ### Surface Reconstruction Quality                                                                                                                         
