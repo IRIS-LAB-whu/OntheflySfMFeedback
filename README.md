@@ -7,7 +7,7 @@
 <p align="center">
   <i>School of Geodesy and Geomatics, Wuhan University, Wuhan 430079, China</i><br/>
   <sup>†</sup> Equal contribution &nbsp;|&nbsp;
-  Corresponding author: <a href="mailto:xwang@sgg.whu.edu.cn">Xin Wang</a>
+  Corresponding authors: <a href="mailto:xwang@sgg.whu.edu.cn">Xin Wang</a>, <a href="mailto:zqzhan@sgg.whu.edu.cn">Zongqian Zhan</a>
 </p>
 
 <p align="center">
@@ -24,53 +24,37 @@
   </a>
 </p>
 
-**On-the-fly Feedback SfM** is a real-time UAV photogrammetry framework that integrates **incremental Structure-from-Motion (SfM)**, **online coarse mesh generation**, **real-time mesh quality assessment**, and **predictive path planning** into a closed feedback loop for adaptive aerial data acquisition.
+**On-the-fly Feedback SfM** is an online explore-and-exploit UAV photogrammetry framework that tightly couples image acquisition, incremental reconstruction, mesh-quality assessment, and predictive path planning. Instead of reconstructing a scene only after a pre-planned flight is complete, the system evaluates the evolving 3D model during acquisition and feeds quality cues back to the UAV for adaptive data capture.
 
-Unlike conventional offline photogrammetry pipelines that reconstruct scenes only after the flight is finished, this framework continuously evaluates the evolving reconstruction quality during image acquisition and actively guides the UAV toward under-observed or low-quality regions. This enables an **explore-and-exploit** workflow for efficient, reconstruction-aware, and navigation-guided UAV photogrammetry.
+Built upon **[SfM on-the-fly](https://yifeiyu225.github.io/on-the-flySfMv2.github.io/)**, the framework processes small incoming image batches, updates camera poses and sparse structure, builds an incremental surface proxy, estimates per-face quality indicators, and plans new trajectory segments toward low-quality regions. This closes the loop from **acquisition → reconstruction → assessment → planning → re-acquisition** in near real time.
 
 <img width="100%" alt="workflow" src="assets/workflow_overview.jpg" />
 
 ---
 
-## Highlights
+## Key Contributions
 
-- **Incremental SfM with online feedback**  
-  Continuously estimates camera poses and expands sparse 3D structure as new UAV images arrive.
+- **Online explore-and-exploit UAV photogrammetry.** We couple image acquisition, incremental reconstruction, quality assessment, and optimal path planning into a unified online workflow, allowing the UAV to adapt its flight path during the mission.
 
-- **Online coarse mesh generation**  
-  Builds coarse mesh representations directly from incrementally reconstructed sparse point clouds.
+- **Incremental meshing with mesh quality-aware indicators.** A dynamic energy function, incremental ray tracing, and dynamic graph cuts reconstruct surfaces from a growing point cloud; the mesh then supports interpretable indicators including GSD, observation redundancy, and reprojection error.
 
-- **Real-time mesh quality assessment**  
-  Evaluates reconstruction quality using multiple indicators, including:
-  - Ground Sampling Distance (**GSD**)
-  - Observation Redundancy
-  - Reprojection Error
-
-- **Predictive path planning and trajectory refinement**  
-  Detects low-quality mesh regions and generates informative next-best viewpoints for adaptive image acquisition.
-
-- **Closed-loop UAV photogrammetry**  
-  Couples scene reconstruction, quality evaluation, and navigation guidance into a unified online framework.
+- **Predictive path planning with quality-aware trajectory optimization.** Low-quality regions are identified from the ensemble indicator, grouped with DBSCAN, sampled under multi-constraint viewpoint generation, and optimized with an altitude-aware trajectory cost and 2-opt refinement.
 
 ---
 
 ## Framework Overview
 
-The system follows an **explore-and-exploit** strategy:
+The system follows an integrated **explore-and-exploit** working mode:
 
-1. **Explore**  
-   Acquire UAV images incrementally and perform online SfM to estimate camera poses and sparse 3D structure.
+1. **SfM on-the-fly update.** Each incoming UAV image batch refines camera poses and expands the sparse point cloud without interrupting UAV motion.
 
-2. **Evaluate**  
-   Generate a coarse mesh from the evolving sparse point cloud and assess its reconstruction quality in real time.
+2. **Incremental surface reconstruction.** The evolving sparse cloud is immediately converted into a triangular surface through dynamic 3D Delaunay updates, ray-based energy accumulation, and dynamic graph-cut optimization.
 
-3. **Exploit**  
-   Identify low-quality or under-observed regions and generate candidate viewpoints to improve reconstruction completeness and reliability.
+3. **Online quality assessment.** Per-face photogrammetric indicators are computed and fused into an ensemble quality score that exposes regions with poor imaging geometry, sparse observations, or high reprojection error.
 
-4. **Refine**  
-   Optimize the UAV trajectory to balance acquisition efficiency, path smoothness, and reconstruction-oriented coverage.
+4. **Predictive path planning.** Low-quality regions guide candidate viewpoint generation, viewpoint sparsification, and smooth trajectory optimization; the resulting segment is executed before the next image batch arrives.
 
-This design allows the UAV to adapt its flight path according to the current reconstruction status rather than relying solely on a predefined flight route.
+Each small batch, typically 5-20 images, triggers one complete feedback cycle of reconstruction, quality assessment, and trajectory update.
 
 ---
 
@@ -88,34 +72,60 @@ We evaluate our method on the following UAV datasets:
 | XingHu | — | DJI Matrice 4T | 4032×3024 | Self-captured |
 
 <p align="center">
-  <img src="assets/sample_images.png" alt="Sample images of the evaluated UAV datasets" width="100%"/>
+  <img src="assets/sample_images.jpg" alt="Sample images of the evaluated UAV datasets" width="100%"/>
 </p>
 
 <p align="center"><em>Sample images of the evaluated UAV datasets.</em></p>
 
-## Experimental Results                                                                                                                                    
-                                                                                                                                                           
-### Surface Reconstruction Quality                                                                                                                         
-                                                                                                                                                           
-Quantitative comparison of three surface reconstruction methods:                                                                                           
-                                                                                                                                                           
-| Dataset | Method | Accuracy | Completeness | F1 Score |                                                                                                  
-|---------|--------|----------|--------------|----------|                                                                                                  
-| | Colmap | 0.4970 | **0.4771** | 0.4868 |                                                                                                       
-| **SHHY**| OpenMVG | **0.7270** | 0.3633 | 0.4845 |                                                                                                               
-| | Ours | 0.6509 | 0.4527 | **0.5340** |                                                                                                                  
-| | Colmap | 0.7793 | **0.6092** | **0.6838** |                                                                                                    
-| **GYM** | OpenMVG | 0.7363 | 0.4937 | 0.5911 |                                                                                                                   
-| | Ours | **0.8001** | 0.5958 | 0.6830 |                                                                                                                  
-| | Colmap | 0.7042 | **0.5755** | **0.6334** |                                                                                                     
-| **YS** | OpenMVG | 0.7054 | 0.4672 | 0.5621 |                                                                                                                   
-| | Ours | **0.7271** | 0.5533 | 0.6284 |                                                                                                                  
-                                                                                                                                                           
-**Bold** indicates the best performance.    
+## Experimental Results
+
+We evaluate the framework from four complementary perspectives: incremental surface reconstruction, online mesh-quality assessment, adaptive path planning, and the full explore-and-exploit feedback pipeline. All experiments are run on a machine with an Intel i9-12900K CPU and an NVIDIA RTX3080 GPU.
+
+### Surface Reconstruction Quality
+
+Quantitative comparison of surface reconstruction quality. **Bold** indicates the best value in each dataset group.
+
+| Dataset | Method | Accuracy | Completeness | F1 Score |
+|---------|--------|----------|--------------|----------|
+| SHHY | COLMAP | 0.4970 | **0.4771** | 0.4868 |
+| SHHY | OpenMVG | **0.7270** | 0.3633 | 0.4845 |
+| SHHY | Ours | 0.6509 | 0.4527 | **0.5340** |
+| GYM | COLMAP | 0.7793 | **0.6092** | **0.6838** |
+| GYM | OpenMVG | 0.7363 | 0.4937 | 0.5911 |
+| GYM | Ours | **0.8001** | 0.5958 | 0.6830 |
+| YS | COLMAP | 0.7042 | **0.5755** | **0.6334** |
+| YS | OpenMVG | 0.7054 | 0.4672 | 0.5621 |
+| YS | Ours | **0.7271** | 0.5533 | 0.6284 |
+
+### Online Quality Assessment
+
+The ensemble mesh-quality indicator `Q_total` reflects both geometric and observational completeness. On PHANTOM, regions with stronger observation redundancy consistently appear as higher-quality areas, while sparse or weakly observed regions are assigned lower scores. On US3D, the indicator captures local quality evolution in complex rooftop structures as additional images are integrated.
+
+### Adaptive Path Planning
+
+On the US3D benchmark, the proposed strategy reallocates viewpoints toward detected low-quality regions while keeping planning responsive enough for online operation.
+
+| Method | Viewpoints | Trajectory Length | Generation Time |
+|--------|------------|-------------------|-----------------|
+| Smith et al. | 230 | 387.86 | Offline |
+| Circle | 66 | 1867.03 | Manually designed |
+| Nadir | 64 | 1783.99 | Manually designed |
+| Ours | 120 | 947.43 | 744.342 ms |
+
+### Online Feedback Pipeline
+
+On the self-captured XingHu dataset, the full pipeline updates reconstruction, quality assessment, and trajectory planning in near real time. The average processing time remains around 1.4-1.5 seconds per image, and trajectory generation remains below one second across online iterations.
+
+| Stage | Accuracy | Completeness | F1 Score | Avg. Time / Image | Trajectory Generation |
+|-------|----------|--------------|----------|-------------------|-----------------------|
+| Iteration 1 | 0.6764 | 0.4143 | 0.5138 | 1.465 s | 602.311 ms |
+| Iteration 2 | 0.8333 | 0.5232 | 0.6428 | 1.470 s | 183.801 ms |
+| Iteration 3 | 0.8141 | 0.4830 | 0.6063 | 1.415 s | 497.513 ms |
+| Final | 0.8291 | 0.5099 | 0.6315 | 1.475 s | - |
 
 ---
 
-# Install Instructions
+## Install Instructions
 
 ## Prerequisites
 
