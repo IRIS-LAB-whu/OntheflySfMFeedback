@@ -87,6 +87,26 @@ We evaluate our method on the following UAV datasets:
 | YS | 320 | DJI Matrice 4T | 4032×3024 | Self-captured |
 | XingHu | — | DJI Matrice 4T | 4032×3024 | Self-captured |
 
+## Experimental Results                                                                                                                                    
+                                                                                                                                                           
+### Surface Reconstruction Quality                                                                                                                         
+                                                                                                                                                           
+Quantitative comparison of three surface reconstruction methods:                                                                                           
+                                                                                                                                                           
+| Dataset | Method | Accuracy | Completeness | F1 Score |                                                                                                  
+|---------|--------|----------|--------------|----------|                                                                                                  
+| **SHHY** | Colmap | 0.4970 | **0.4771** | 0.4868 |                                                                                                       
+| | OpenMVG | **0.7270** | 0.3633 | 0.4845 |                                                                                                               
+| | Ours | 0.6509 | 0.4527 | **0.5340** |                                                                                                                  
+| **GYM** | Colmap | 0.7793 | **0.6092** | **0.6838** |                                                                                                    
+| | OpenMVG | 0.7363 | 0.4937 | 0.5911 |                                                                                                                   
+| | Ours | **0.8001** | 0.5958 | 0.6830 |                                                                                                                  
+| **YS** | Colmap | 0.7042 | **0.5755** | **0.6334** |                                                                                                     
+| | OpenMVG | 0.7054 | 0.4672 | 0.5621 |                                                                                                                   
+| | Ours | **0.7271** | 0.5533 | 0.6284 |                                                                                                                  
+                                                                                                                                                           
+**Bold** indicates the best performance.    
+
 ---
 
 # Install Instructions
