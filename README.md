@@ -101,10 +101,23 @@ Quantitative comparison of surface reconstruction quality. **Bold** indicates th
 
 The ensemble mesh-quality indicator `Q_total` reflects both geometric and observational completeness. On PHANTOM, regions with stronger observation redundancy consistently appear as higher-quality areas, while sparse or weakly observed regions are assigned lower scores. On US3D, the indicator captures local quality evolution in complex rooftop structures as additional images are integrated.
 
+<p align="center">
+  <img src="assets/online_quality_feedback.jpg" alt="Online quality assessment during incremental image acquisition " width="100%"/>
+</p>
+
+<p align="center"><em>Online quality assessment during incremental image acquisition.</em></p>
+
 
 ### Online Feedback Pipeline
 
 On the self-captured XingHu dataset, the full pipeline updates reconstruction, quality assessment, and trajectory planning in near real time. The average processing time remains around 1.4-1.5 seconds per image, and trajectory generation remains below one second across online iterations.
+
+<p align="center">
+  <img src="assets/explore_and_exploit.jpg" alt="Explore-and-exploit feedback pipeline" width="100%"/>
+</p>
+
+<p align="center"><em>Explore-and-exploit online feedback pipeline.</em></p>
+
 
 | Stage | Accuracy | Completeness | F1 Score | Avg. Time / Image | Trajectory Generation |
 |-------|----------|--------------|----------|-------------------|-----------------------|
