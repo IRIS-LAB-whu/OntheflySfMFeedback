@@ -28,7 +28,7 @@
 
 Unlike conventional offline photogrammetry pipelines that reconstruct scenes only after the flight is finished, this framework continuously evaluates the evolving reconstruction quality during image acquisition and actively guides the UAV toward under-observed or low-quality regions. This enables an **explore-and-exploit** workflow for efficient, reconstruction-aware, and navigation-guided UAV photogrammetry.
 
-<img width="7816" height="4670" alt="workflow" src="https://github.com/user-attachments/assets/f441ee69-4dac-4fb4-810f-627d121a74d5" />
+<img width="100%" alt="workflow" src="assets/workflow_overview.jpg" />
 
 ---
 
