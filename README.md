@@ -107,6 +107,12 @@ The ensemble mesh-quality indicator `Q_total` reflects both geometric and observ
 
 <p align="center"><em>Online quality assessment during incremental image acquisition.</em></p>
 
+<p align="center">
+  <img src="assets/quality_new_ROI.png" alt="Localized consistency verification of the quality indicator within a specific Region of Interest (ROI). " width="100%"/>
+</p>
+
+<p align="center"><em>Localized consistency verification of the quality indicator within a specific Region of Interest (ROI). .</em></p>
+
 
 ### Online Feedback Pipeline
 
