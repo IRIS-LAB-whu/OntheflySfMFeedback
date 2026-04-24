@@ -62,14 +62,29 @@ Each small batch, typically 5-20 images, triggers one complete feedback cycle of
 
 We evaluate our method on the following UAV datasets:
 
-| Dataset | Images | Platform | Resolution | Source |
-|---------|--------|----------|------------|--------|
-| SHHY | 770 | DJI Mavic 2 Pro | 1920×1080 | Self-captured |
-| PHANTOM | 467 | DJI Mavic 2 Pro | 1920×1080 | [Bu et al., 2016](https://ieeexplore.ieee.org/abstract/document/7759672) |
-| US3D | 990 | — | 5472×3648 | [Lin et al., 2022](https://link.springer.com/chapter/10.1007/978-3-031-20074-8_6) |
-| GYM | 580 | DJI Matrice 4T | 4032×3024 | Self-captured |
-| YS | 320 | DJI Matrice 4T | 4032×3024 | Self-captured |
-| XingHu | — | DJI Matrice 4T | 4032×3024 | Self-captured |
+<div align="center">
+
+<table>
+  <thead>
+    <tr>
+      <th style="border-top: 2px solid #333; border-bottom: 1px solid #333; text-align: center;">Dataset</th>
+      <th style="border-top: 2px solid #333; border-bottom: 1px solid #333; text-align: center;">Images</th>
+      <th style="border-top: 2px solid #333; border-bottom: 1px solid #333; text-align: center;">Platform</th>
+      <th style="border-top: 2px solid #333; border-bottom: 1px solid #333; text-align: center;">Resolution</th>
+      <th style="border-top: 2px solid #333; border-bottom: 1px solid #333; text-align: center;">Source</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td align="center">SHHY</td><td align="center">770</td><td align="center">DJI Mavic 2 Pro</td><td align="center">1920×1080</td><td align="center">Self-captured</td></tr>
+    <tr><td align="center">PHANTOM</td><td align="center">467</td><td align="center">DJI Mavic 2 Pro</td><td align="center">1920×1080</td><td align="center"><a href="https://ieeexplore.ieee.org/abstract/document/7759672">Bu et al., 2016</a></td></tr>
+    <tr><td align="center">US3D</td><td align="center">990</td><td align="center">-</td><td align="center">5472×3648</td><td align="center"><a href="https://link.springer.com/chapter/10.1007/978-3-031-20074-8_6">Lin et al., 2022</a></td></tr>
+    <tr><td align="center">GYM</td><td align="center">580</td><td align="center">DJI Matrice 4T</td><td align="center">4032×3024</td><td align="center">Self-captured</td></tr>
+    <tr><td align="center">YS</td><td align="center">320</td><td align="center">DJI Matrice 4T</td><td align="center">4032×3024</td><td align="center">Self-captured</td></tr>
+    <tr><td align="center" style="border-bottom: 2px solid #333;">XingHu</td><td align="center" style="border-bottom: 2px solid #333;">-</td><td align="center" style="border-bottom: 2px solid #333;">DJI Matrice 4T</td><td align="center" style="border-bottom: 2px solid #333;">4032×3024</td><td align="center" style="border-bottom: 2px solid #333;">Self-captured</td></tr>
+  </tbody>
+</table>
+
+</div>
 
 <p align="center">
   <img src="assets/sample_images.jpg" alt="Sample images of the evaluated UAV datasets" width="100%"/>
@@ -85,33 +100,48 @@ We evaluate the framework from four complementary perspectives: incremental surf
 
 Quantitative comparison of surface reconstruction quality. **Bold** indicates the best value in each dataset group.
 
-| Dataset | Method | Accuracy | Completeness | F1 Score |
-|---------|--------|----------|--------------|----------|
-| SHHY | COLMAP | 0.4970 | **0.4771** | 0.4868 |
-| SHHY | OpenMVG | **0.7270** | 0.3633 | 0.4845 |
-| SHHY | Ours | 0.6509 | 0.4527 | **0.5340** |
-| GYM | COLMAP | 0.7793 | **0.6092** | **0.6838** |
-| GYM | OpenMVG | 0.7363 | 0.4937 | 0.5911 |
-| GYM | Ours | **0.8001** | 0.5958 | 0.6830 |
-| YS | COLMAP | 0.7042 | **0.5755** | **0.6334** |
-| YS | OpenMVG | 0.7054 | 0.4672 | 0.5621 |
-| YS | Ours | **0.7271** | 0.5533 | 0.6284 |
+<div align="center">
+
+<table>
+  <thead>
+    <tr>
+      <th style="border-top: 2px solid #333; border-bottom: 1px solid #333; text-align: center;">Dataset</th>
+      <th style="border-top: 2px solid #333; border-bottom: 1px solid #333; text-align: center;">Method</th>
+      <th style="border-top: 2px solid #333; border-bottom: 1px solid #333; text-align: center;">Accuracy</th>
+      <th style="border-top: 2px solid #333; border-bottom: 1px solid #333; text-align: center;">Completeness</th>
+      <th style="border-top: 2px solid #333; border-bottom: 1px solid #333; text-align: center;">F1 Score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td align="center" rowspan="3">SHHY</td><td align="center">COLMAP</td><td align="center">0.4970</td><td align="center"><b>0.4771</b></td><td align="center">0.4868</td></tr>
+    <tr><td align="center">OpenMVG</td><td align="center"><b>0.7270</b></td><td align="center">0.3633</td><td align="center">0.4845</td></tr>
+    <tr><td align="center">Ours</td><td align="center">0.6509</td><td align="center">0.4527</td><td align="center"><b>0.5340</b></td></tr>
+    <tr><td align="center" rowspan="3">GYM</td><td align="center">COLMAP</td><td align="center">0.7793</td><td align="center"><b>0.6092</b></td><td align="center"><b>0.6838</b></td></tr>
+    <tr><td align="center">OpenMVG</td><td align="center">0.7363</td><td align="center">0.4937</td><td align="center">0.5911</td></tr>
+    <tr><td align="center">Ours</td><td align="center"><b>0.8001</b></td><td align="center">0.5958</td><td align="center">0.6830</td></tr>
+    <tr><td align="center" rowspan="3" style="border-bottom: 2px solid #333;">YS</td><td align="center">COLMAP</td><td align="center">0.7042</td><td align="center"><b>0.5755</b></td><td align="center"><b>0.6334</b></td></tr>
+    <tr><td align="center">OpenMVG</td><td align="center">0.7054</td><td align="center">0.4672</td><td align="center">0.5621</td></tr>
+    <tr><td align="center" style="border-bottom: 2px solid #333;">Ours</td><td align="center" style="border-bottom: 2px solid #333;"><b>0.7271</b></td><td align="center" style="border-bottom: 2px solid #333;">0.5533</td><td align="center" style="border-bottom: 2px solid #333;">0.6284</td></tr>
+  </tbody>
+</table>
+
+</div>
 
 ### Online Quality Assessment
 
 The ensemble mesh-quality indicator `Q_total` reflects both geometric and observational completeness. On PHANTOM, regions with stronger observation redundancy consistently appear as higher-quality areas, while sparse or weakly observed regions are assigned lower scores. On US3D, the indicator captures local quality evolution in complex rooftop structures as additional images are integrated.
 
 <p align="center">
-  <img src="assets/online_quality_feedback.png" alt="Online quality assessment during incremental image acquisition " width="100%"/>
+  <img src="assets/online_quality_feedback.png" alt="Online quality assessment during incremental image acquisition" width="100%"/>
 </p>
 
 <p align="center"><em>Online quality assessment during incremental image acquisition.</em></p>
 
 <p align="center">
-  <img src="assets/quality_new_ROI.png" alt="Localized consistency verification of the quality indicator within a specific Region of Interest (ROI). " width="100%"/>
+  <img src="assets/quality_new_ROI.png" alt="Localized consistency verification of the quality indicator within a specific Region of Interest (ROI)" width="100%"/>
 </p>
 
-<p align="center"><em>Localized consistency verification of the quality indicator within a specific Region of Interest (ROI). .</em></p>
+<p align="center"><em>Localized consistency verification of the quality indicator within a specific Region of Interest (ROI).</em></p>
 
 
 ### Online Feedback Pipeline
@@ -124,13 +154,28 @@ On the self-captured XingHu dataset, the full pipeline updates reconstruction, q
 
 <p align="center"><em>Explore-and-exploit online feedback pipeline.</em></p>
 
+<div align="center">
 
-| Stage | Accuracy | Completeness | F1 Score | Avg. Time / Image | Trajectory Generation |
-|-------|----------|--------------|----------|-------------------|-----------------------|
-| Iteration 1 | 0.6764 | 0.4143 | 0.5138 | 1.465 s | 602.311 ms |
-| Iteration 2 | 0.8333 | 0.5232 | 0.6428 | 1.470 s | 183.801 ms |
-| Iteration 3 | 0.8141 | 0.4830 | 0.6063 | 1.415 s | 497.513 ms |
-| Final | 0.8291 | 0.5099 | 0.6315 | 1.475 s | - |
+<table>
+  <thead>
+    <tr>
+      <th style="border-top: 2px solid #333; border-bottom: 1px solid #333; text-align: center;">Stage</th>
+      <th style="border-top: 2px solid #333; border-bottom: 1px solid #333; text-align: center;">Accuracy</th>
+      <th style="border-top: 2px solid #333; border-bottom: 1px solid #333; text-align: center;">Completeness</th>
+      <th style="border-top: 2px solid #333; border-bottom: 1px solid #333; text-align: center;">F1 Score</th>
+      <th style="border-top: 2px solid #333; border-bottom: 1px solid #333; text-align: center;">Avg. Time / Image</th>
+      <th style="border-top: 2px solid #333; border-bottom: 1px solid #333; text-align: center;">Trajectory Generation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td align="center">Iteration 1</td><td align="center">0.6764</td><td align="center">0.4143</td><td align="center">0.5138</td><td align="center">1.465 s</td><td align="center">602.311 ms</td></tr>
+    <tr><td align="center">Iteration 2</td><td align="center">0.8333</td><td align="center">0.5232</td><td align="center">0.6428</td><td align="center">1.470 s</td><td align="center">183.801 ms</td></tr>
+    <tr><td align="center">Iteration 3</td><td align="center">0.8141</td><td align="center">0.4830</td><td align="center">0.6063</td><td align="center">1.415 s</td><td align="center">497.513 ms</td></tr>
+    <tr><td align="center" style="border-bottom: 2px solid #333;">Final</td><td align="center" style="border-bottom: 2px solid #333;">0.8291</td><td align="center" style="border-bottom: 2px solid #333;">0.5099</td><td align="center" style="border-bottom: 2px solid #333;">0.6315</td><td align="center" style="border-bottom: 2px solid #333;">1.475 s</td><td align="center" style="border-bottom: 2px solid #333;">-</td></tr>
+  </tbody>
+</table>
+
+</div>
 
 ---
 
